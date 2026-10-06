@@ -22,11 +22,12 @@ int main(){
         if (cin.get() == '\n') break;
     }
     for (int i=0; i<n; i++){
-        int j=i;
-        while (j >0 && A[j]<A[j-1]){
-            swap(A[j], A[j-1]);
-            j--;
+        int min =i;
+        for(int j=i+1; j<n; j++)
+        if( A[j]<A[min]){
+           min = j; 
         }
+        swap(A[i], A[min]);
         inmang();
     }
     return 0;
